@@ -4,7 +4,7 @@ import 'package:design_by_me/models/font_data_model.dart';
 import 'package:http/http.dart' as http;
 
 class GoogleApiConnection {
-  final String googleApiKey = 'AIzaSyAoPLTpvDwNyxX0OGq968bVI90pNaTlUIY';
+  final String googleApiKey = 'YOURKEY';
 
   Future<List<FontData>> getFonts() async {
     http.Response response = await http.get(
@@ -28,7 +28,7 @@ class GoogleApiConnection {
 
 Future<ByteData> fetchFont() async {
   final response = await http.get(
-     // 'http://fonts.gstatic.com/s/actor/v9/wEOzEBbCkc5cO3ekXygtUMIO.ttf');
+     
      'https://www.googleapis.com/webfonts/v1/webfonts?key=$googleApiKey');
 
   if (response.statusCode == 200) {
